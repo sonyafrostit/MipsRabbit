@@ -6,6 +6,7 @@
 
 /*** Rules ***/
 %%
+\/\/.* { printf("Found a comment!"); }
 [ \n] ;
 $[a-zA-z0-9]+ { printf("Found an instruction: %s", yytext); } 
 [a-zA-z0-9]+: { printf("Found a label: %s", yytext); } 
