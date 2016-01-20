@@ -8,6 +8,7 @@ int main(int argc, char** argv) {
 		// File interpreter mode
 		set_source_file(argv[1]);
 		mips_lex();
+		cleanup();
 	} else {
 		// Console mode
 		printf("Welcome to the MipsRabbit MIPS interpreter!\n"
@@ -15,6 +16,7 @@ int main(int argc, char** argv) {
 		       "Type :help for a list of commands\n> ");
 		set_source_stdin();
 		mips_lex();
+		cleanup();
 	}
 	return 0;
 }

@@ -10,8 +10,8 @@
 #.* { printf("Found a comment!"); }
 [ \n] ;
 $[a-zA-z0-9]+ { printf("Found a register: %s", yytext); } 
+:[a-zA-z0-9]+  { printf("Found a meta-instruction: %s", yytext); }
 [a-zA-z0-9]+: { printf("Found a label: %s", yytext); } 
-:[a-zA-z0-9]+  { printf("Found a meta-instruction: %s", yytext); } 
 [a-zA-z0-9]+  { printf("Found an instruction: %s", yytext); } 
 
 %%
@@ -27,4 +27,8 @@ void set_source_file(char* s) {
 
 void mips_lex() {
 	yylex();
+}
+
+void cleanup() {
+	fclose(yyin);
 }
