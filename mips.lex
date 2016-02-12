@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lexer.h"
 #define FALSE 0
-#define TRUE 0
+#define TRUE 1
 %}
 %option noyywrap
 
